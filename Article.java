@@ -1,54 +1,39 @@
-package LearnSE.dao;
+package LearnSE.model;
 
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-public class Article {
-    private int articleId;
-    private String articleName;
-    private String authorName;
-    private String content;
-
-    // Default constructor
+/**
+ * Servlet implementation class Article
+ */
+public class Article extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
     public Article() {
+        super();
+        // TODO Auto-generated constructor stub
     }
 
-    // Parameterized constructor
-    public Article(int articleId, String articleName, String authorName, String content) {
-        this.articleId = articleId;
-        this.articleName = articleName;
-        this.authorName = authorName;
-        this.content = content;
-    }
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
 
-    // Getters and Setters
-    public int getArticleId() {
-        return articleId;
-    }
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		doGet(request, response);
+	}
 
-    public void setArticleId(int articleId) {
-        this.articleId = articleId;
-    }
-
-    public String getArticleName() {
-        return articleName;
-    }
-
-    public void setArticleName(String articleName) {
-        this.articleName = articleName;
-    }
-
-    public String getAuthorName() {
-        return authorName;
-    }
-
-    public void setAuthorName(String authorName) {
-        this.authorName = authorName;
-    }
-
-    public String getContent() {
-        return content;
-    }
-
-    public void setContent(String content) {
-        this.content = content;
-    }
 }
